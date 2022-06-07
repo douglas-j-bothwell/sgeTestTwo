@@ -1,0 +1,14 @@
+inputSet:
+  identifier: "fixedbranchmynewfeaturebranch"
+  name: "fixed-branch-my-new-feature-branch"
+  orgIdentifier: "default"
+  projectIdentifier: "dougproject"
+  pipeline:
+    identifier: "pipelinetest006"
+    properties:
+      ci:
+        codebase:
+          build:
+            type: "branch"
+            spec:
+              branch: "my-new-feature-branch"
