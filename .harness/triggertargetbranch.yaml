@@ -1,0 +1,14 @@
+inputSet:
+  identifier: "triggertargetbranch"
+  pipeline:
+    identifier: "pipelinetest006"
+    properties:
+      ci:
+        codebase:
+          build:
+            type: "branch"
+            spec:
+              branch: "<+trigger.targetBranch>"
+  name: "trigger-target-branch"
+  orgIdentifier: "default"
+  projectIdentifier: "dougproject"
