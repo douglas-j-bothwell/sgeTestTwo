@@ -55,7 +55,7 @@ pipeline:
                                     connectorRef: dbothwelldockerhub
                                     repo: dbothwell/sgetestone
                                     tags:
-                                        - pipelinetest006-latest
+                                        - pipelinetest006-my-new-feature-branch-latest
     properties:
         ci:
             codebase:
