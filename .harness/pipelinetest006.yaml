@@ -31,3 +31,34 @@ pipeline:
                                     executionTarget: {}
                                 timeout: 10m
               tags: {}
+        - stage:
+              name: buildStage
+              identifier: buildStage
+              type: CI
+              spec:
+                  cloneCodebase: true
+                  infrastructure:
+                      type: KubernetesDirect
+                      spec:
+                          connectorRef: docsgkedbothwellciquickstart
+                          namespace: harness-delegate-ng
+                          automountServiceAccountToken: true
+                          nodeSelector: {}
+                          harnessImageConnectorRef: dbothwelldockerhub
+                  execution:
+                      steps:
+                          - step:
+                                type: BuildAndPushDockerRegistry
+                                name: pushToDockerHub
+                                identifier: pushToDockerHub
+                                spec:
+                                    connectorRef: dbothwelldockerhub
+                                    repo: dbothwell/sgetestone
+                                    tags:
+                                        - pipelinetest006-latest
+    properties:
+        ci:
+            codebase:
+                connectorRef: douglasjbothwellgithub
+                repoName: sgeTestTwo
+                build: <+input>
