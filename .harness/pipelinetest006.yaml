@@ -1,0 +1,33 @@
+pipeline:
+    name: pipelinetest006
+    identifier: pipelinetest006
+    projectIdentifier: dougproject
+    orgIdentifier: default
+    storeType: REMOTE
+    remoteType: create
+    tags: {}
+    stages:
+        - stage:
+              name: echoMyBranch
+              identifier: echoMyBranch
+              description: ""
+              type: Custom
+              spec:
+                  execution:
+                      steps:
+                          - step:
+                                type: ShellScript
+                                name: echoMyBranch
+                                identifier: echoMyBranch
+                                spec:
+                                    shell: Bash
+                                    onDelegate: true
+                                    source:
+                                        type: Inline
+                                        spec:
+                                            script: echo "I am now in main"
+                                    environmentVariables: []
+                                    outputVariables: []
+                                    executionTarget: {}
+                                timeout: 10m
+              tags: {}
