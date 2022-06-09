@@ -1,5 +1,9 @@
 inputSet:
   identifier: "triggertargetbranch"
+  name: "input-set-trigger-target-branch-main"
+  tags: {}
+  orgIdentifier: "default"
+  projectIdentifier: "dougproject"
   pipeline:
     identifier: "pipelinetest006"
     properties:
@@ -9,6 +13,3 @@ inputSet:
             type: "branch"
             spec:
               branch: "<+trigger.targetBranch>"
-  name: "trigger-target-branch"
-  orgIdentifier: "default"
-  projectIdentifier: "dougproject"
